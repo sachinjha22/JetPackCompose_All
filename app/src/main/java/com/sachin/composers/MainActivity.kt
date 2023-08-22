@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -15,6 +16,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
+import com.sachin.composers.appBarComponent.BottomAppBar
 import com.sachin.composers.appBarComponent.LargeTopAppBar
 import com.sachin.composers.appBarComponent.MediumTopAppBar
 
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     LazyColumn(
                         contentPadding = innerPadding,
                         verticalArrangement = Arrangement.spacedBy(8.dp),
-                        modifier = Modifier.padding(top = 20.dp)
+                        modifier = Modifier.padding(top = 20.dp, bottom = 40.dp)
                     ) {
                         val list = (0..75).map { it.toString() }
                         items(count = list.size) {
@@ -46,7 +48,11 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     }
-                }
+                },
+                bottomBar = {
+                    BottomAppBar()
+                },
+                floatingActionButtonPosition = FabPosition.Center
             )
         }
     }
