@@ -1,4 +1,4 @@
-package com.sachin.composers.appBarComponent
+package com.sachin.composers.component.appBar
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
